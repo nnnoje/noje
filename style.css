@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Lustria';
+    background-color: #000;
+    color: #fff;
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Allows the content to push the footer down */
+    justify-content: space-between; /* Makes sure the footer sticks to the bottom */
+}
+
+/* Wrapper for the content */
+.content {
+    flex: 1; /* Ensures the content area grows to fill available space */
+}
+
+/* Sticky footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* Or your preferred background color */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Footer content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ccc; /* Lighter color on hover */
+}
+
+/* Avoid content overlap by adding bottom padding or margin */
+.main-content {
+    padding-bottom: 60px; /* Adjust based on footer height */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+.footer-content {
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.TELLEM {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    background-image: url('images/TELLEM.PNG'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+}
+
+.TELLEM1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.TELLEM1 h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-family: 'Lustria';
+    font-weight: 100;
+    color: #fff;
+    letter-spacing: 8px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.TELLEM1 h2 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-family: 'Lustria';
+    font: 100;
+    color: #fff;
+    letter-spacing: 5px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-family: 'Lustria';
+    font-weight: 00;
+    font-size: 150%;
+    text-decoration: none;
+    color: #fff;
+    background-image: linear-gradient(to bottom, transparent 1px, #808080 1px);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: 0%;
+    transition: background-size .15s;
+
+    }
+    a.nav:hover {
+        color: #fff;
+        background-size: 100%;
+        background-position-x: left;
+    
+}
+
+    nav ul li a:hover {
+        color: #fff;
+        background-size: 100%;
+        background-position-x: left;
+
+    }
+
+/* Default styling: Ensure nav shows on desktop */
+nav {
+    display: flex; /* Show by default */
+    justify-content: flex-end;
+    flex: 1;
+}
+
+/* Hide the nav on mobile and show the nav-phone icon */
+.nav-phone__menu {
+    display: none; /* Hidden by default, shown on toggle */
+}
+
+/* Hamburger icon styling */
+.nav-phone__toggle {
+    font-size: 2rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Only show .nav-phone on mobile */
+.nav-phone {
+    display: none; /* Hidden by default */
+}
+
+.nav-phone__toggle:hover {
+    opacity: 0.7;
+}
+
+/* Mobile view: Show hamburger icon and hide desktop nav */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide main nav on mobile */
+    }
+
+    /* Show hamburger menu icon */
+    .nav-phone {
+        display: flex; /* Show on mobile view */
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Mobile menu overlay when toggled */
+    .nav-phone__menu {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 75%;
+        background-color: rgba(0, 0, 0, 0.95); /* Slightly transparent black */
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        z-index: 1000;
+        gap: 1.5rem;
+        transition: transform 0.3s ease; /* Smooth transition */
+        transform: translateX(100%); /* Start off-screen */
+    }
+
+    /* Show the menu when .show-menu class is added */
+    .nav-phone__menu.show-menu {
+        display: flex;
+        transform: translateX(0); /* Slide-in effect */
+    }
+}
+
+/* Mobile Menu List Styling */
+.nav-phone__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-phone__menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-phone__menu ul li a,
+.nav-phone__link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Lustria', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-phone__menu ul li a:hover,
+.nav-phone__link:hover {
+    color: #ccc; /* Light gray on hover */
+}
+
+/* Close Button */
+.nav-phone__close {
+    align-self: flex-end;
+    margin: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-phone__close:hover {
+    opacity: 0.7;
+}
+
+
+/* CLOTHING */
+
+.clothing {
+    background: url('images/donat.jpg') center center fixed;
+    background-size: cover;
+    min-height: 200vh;
+    padding: 50px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .clothing {
+        background: url('images/donat.jpg') center center fixed;
+        background-size: cover; 
+        background-repeat: repeat-y; /* Repeat the background vertically */
+    }
+}
+/* Wrapper for the content */
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.product-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.clothing {
+    padding: 50px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background for the product items */
+    padding: 20px;
+    border-radius: 20px;
+    color: #000;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin: 15px 0 10px 0;
+    font-size: 18px;
+}
+
+.product p {
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Styling for the product card */
+.product {
+    position: relative;
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.3s ease; 
+}
+
+/* Default Image */
+.product .normal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: opacity 0.3s ease; 
+}
+
+/* Hover Image */
+.product .hover-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+
+.product:hover .normal-image {
+    opacity: 0; 
+}
+
+.product:hover .hover-image {
+    opacity: 1; 
+}
+
+
+.product:hover {
+    transform: scale(1.05); 
+}
+
+
+/* SIZE CHART */
+
+.size {
+    font-family: 'Lustria';
+    background: url('images/SIZE BG.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding: 0;
+    min-height: 100vh; /* Make sure it covers the entire height */
+}
+
+.size-chart-section {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    max-width: 600px; /* Limit the width of the section */
+    height: auto; /* Adjust the height based on the content */
+    margin: 0 auto; /* Center horizontally */
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px; /* Add margin to center vertically, adjust as needed */
+    margin-bottom: 300px; /* Add margin to ensure space from the footer */
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.size-chart {
+    width: 250px; /* Adjust width to make it smaller */
+}
+
+.shirt-image img {
+    width: 300px; 
+    max-width: 100%;
+    height: auto;
+}
+
+.size-chart th, .size-chart td {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.size-chart th {
+    background-color: #000;
+    color: #fff;
+}
+
+/* ABOUT */
+
+.video-container {
+    font-family: 'Lustria';
+    background: url('images/TELLEMBOYS.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding: 0;
+    min-height: 100vh; /* Make sure it covers the entire height */
+}
+
+.video-container {
+    padding: 20px;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    max-width: 600px; /* Adjust the size of the video */
+    height: auto;
+}
+
+/* Add a longer gap between video and description */
+.description {
+    text-align: center;
+    font-size: px;
+    line-height: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 8px 12px;
+    text-align: center;
+}
+
+/* CONTACT */
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack vertically by default */
+    min-height: 100vh;
+    background-image: url('images/contactbg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    gap: 2rem; /* Space between sections */
+}
+
+.contact-info,
+.contact-form {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 3rem; /* Slightly larger padding */
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    max-width: 700px; /* Allow both sections to expand slightly */
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 800px; /* Slightly larger width */
+}
+
+.contact-form h2 {
+    font-size: 2.5rem; /* Increased font size */
+    margin-bottom: 1.5rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem; /* Slightly larger padding */
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.1rem; /* Increase font size */
+}
+
+.contact-form button {
+    padding: 1.2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Increase font size */
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Desktop View: Side-by-side layout */
+@media (min-width: 768px) {
+    .contact-section {
+        flex-direction: row; /* Align side by side on larger screens */
+    }
+    .contact-info {
+        margin-right: 2rem;
+    }
+}
+
+
+

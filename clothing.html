@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KARTELLEM</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="sizechart.html">Size Chart</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Mobile Navigation -->
+        <div class="nav-phone">
+            <!-- Hamburger Icon -->
+            <div class="nav-phone__toggle">☰</div>
+            
+            <!-- Mobile Menu -->
+            <div class="nav-phone__menu">
+                <div class="nav-phone__close">×</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="clothing.html">Clothing</a></li>
+                    <li><a href="sizechart.html">Size Chart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="clothing">
+        <div class="product-grid">
+            <div class="product">
+                <img class="normal-image" src="images/wmptk.PNG" alt="Normal Image">
+                <img class="hover-image" src="images/BLACK WMPTA.PNG" alt="Hover Image">
+                <h3>"We Make This Place Aware"</h3>
+                <p>PHP 900</p>
+            </div>
+            <div class="product">
+                <img class="normal-image" src="images/WHITE.PNG" alt="Normal Image">
+                <img class="hover-image" src="images/WHITE WMPTA.PNG" alt="Hover Image">
+                <h3>"We Make This Place Aware"</h3>
+                <p>PHP 900</p>
+            </div>
+            <div class="product">
+                <img class="normal-image" src="images/seasonpass.PNG" alt="Normal Image">
+                <img class="hover-image" src="images/SEASONPASS BACK.PNG" alt="Hover Image">
+                <h3>"KARTELL'EM x SEASON PASS"</h3>
+                <p>PHP 1000</p>
+            </div>
+            <div class="product">
+                <img class="normal-image" src="images/whitee.PNG" alt="Normal Image">
+                <img class="hover-image" src="images/BACK WHITE.PNG" alt="Hover Image">
+                <h3>"KARTELL'EM x SEASON PASS"</h3>
+                <p>PHP 1000</p>
+            </div>
+
+        </div>
+    </section>>
+    <footer>
+        <div class="footer-content">
+            <p>© NOJE, 2024 ALL RIGHTS RESERVED</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/@KARTELLEM" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/kartellem/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer> 
+    <!--==================== MAIN JS ====================-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.querySelector(".nav-phone__toggle");
+            const menu = document.querySelector(".nav-phone__menu");
+            const closeBtn = document.querySelector(".nav-phone__close");
+        
+            if (toggle && menu && closeBtn) {
+                toggle.addEventListener("click", () => {
+                    menu.classList.toggle("show-menu");
+                });
+        
+                closeBtn.addEventListener("click", () => {
+                    menu.classList.remove("show-menu");
+                });
+            } else {
+                console.error("One or more elements for the mobile menu are missing.");
+            }
+        });
+        </script> 
+         
+</body>
+</html>

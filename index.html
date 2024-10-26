@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARTELL'EM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="sizechart.html">Size Chart</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Mobile Navigation -->
+        <div class="nav-phone">
+            <!-- Hamburger Icon -->
+            <div class="nav-phone__toggle">☰</div>
+            
+            <!-- Mobile Menu -->
+            <div class="nav-phone__menu">
+                <div class="nav-phone__close">×</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="clothing.html">Clothing</a></li>
+                    <li><a href="sizechart.html">Size Chart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="TELLEM">
+        <div class="TELLEM1">
+            <h1>KARTELL'EM</h1>
+            <h2>clothing</h2>
+        </div>
+    </section>
+    <!--==================== MAIN JS ====================-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.querySelector(".nav-phone__toggle");
+            const menu = document.querySelector(".nav-phone__menu");
+            const closeBtn = document.querySelector(".nav-phone__close");
+        
+            if (toggle && menu && closeBtn) {
+                toggle.addEventListener("click", () => {
+                    menu.classList.toggle("show-menu");
+                });
+        
+                closeBtn.addEventListener("click", () => {
+                    menu.classList.remove("show-menu");
+                });
+            } else {
+                console.error("One or more elements for the mobile menu are missing.");
+            }
+        });
+        </script>
+</body>
+</html>

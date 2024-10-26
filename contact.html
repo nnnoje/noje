@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARTELLEM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="sizechart.html">Size Chart</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Mobile Navigation -->
+        <div class="nav-phone">
+            <!-- Hamburger Icon -->
+            <div class="nav-phone__toggle">☰</div>
+            
+            <!-- Mobile Menu -->
+            <div class="nav-phone__menu">
+                <div class="nav-phone__close">×</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="clothing.html">Clothing</a></li>
+                    <li><a href="sizechart.html">Size Chart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!--==================== CONTACT SECTION ====================-->
+    <main class="main">
+        <section class="contact-section container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Any question or remarks? Just write us a message!</p>
+                <div class="info-details">
+                    <p><span class="icon">📞</span> 09159085495</p>
+                    <p><span class="icon">📧</span> kartellem@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" name="first_name">
+                        <input type="text" placeholder="Last Name" name="last_name">
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="text" placeholder="Phone Number" name="phone">
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Message" name="message"></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    </div>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer-content container">
+            <p>© NOJE, 2024 ALL RIGHTS RESERVED</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/@KARTELLEM" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/kartellem/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.querySelector(".nav-phone__toggle");
+            const menu = document.querySelector(".nav-phone__menu");
+            const closeBtn = document.querySelector(".nav-phone__close");
+        
+            // Check if elements exist
+            if (toggle && menu && closeBtn) {
+                toggle.addEventListener("click", () => {
+                    menu.classList.toggle("show-menu");
+                });
+        
+                closeBtn.addEventListener("click", () => {
+                    menu.classList.remove("show-menu");
+                });
+            } else {
+                console.error("One or more elements for the mobile menu are missing.");
+            }
+        });
+        </script>
+        
+</body>
+</html>
